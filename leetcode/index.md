@@ -11,6 +11,7 @@
 * [501. Find Mode in Binary Tree](https://zergzerg.cn/notes/webnotes/leetcode/501.html)
 * [506. Relative Ranks](https://zergzerg.cn/notes/webnotes/leetcode/506.html)
 * [507. Perfect Number](https://zergzerg.cn/notes/webnotes/leetcode/507.html)
+* [520. Detect Capital](https://zergzerg.cn/notes/webnotes/leetcode/520.html)
 * [709. To Lower Case](https://zergzerg.cn/notes/webnotes/leetcode/709.html)
 * [762. Prime Number of Set Bits in Binary Representation](https://zergzerg.cn/notes/webnotes/leetcode/762.html)
 * [859. Buddy Strings](https://zergzerg.cn/notes/webnotes/leetcode/859.html)

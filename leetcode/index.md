@@ -25,5 +25,3 @@
 * [914. X of a Kind in a Deck of Cards](https://zergzerg.cn/notes/webnotes/leetcode/914.html)
 * [915. Partition Array into Disjoint Intervals](https://zergzerg.cn/notes/webnotes/leetcode/915.html)
 
-
-

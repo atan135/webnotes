@@ -3,6 +3,7 @@
 * [1. Two Sum](https://zergzerg.cn/notes/webnotes/leetcode/1.html)
 * [2. Add Two Number](https://zergzerg.cn/notes/webnotes/leetcode/2.html)
 * [4. Median of Two Sorted Array](https://zergzerg.cn/notes/webnotes/leetcode/4.html)
+* [6. ZigZag Conversion](https://zergzerg.cn/notes/webnotes/leetcode/6.html)
 * [367. Valid Perfect Square](https://zergzerg.cn/notes/webnotes/leetcode/367.html)
 * [389. Find the Difference](https://zergzerg.cn/notes/webnotes/leetcode/389.html)
 * [394. Decode String](https://zergzerg.cn/notes/webnotes/leetcode/394.html)

@@ -1,6 +1,6 @@
 # LeetCode已完成题目整理
 
-* [1. Two Sum](https://zergzerg.cn/notes/webnotes/leetcode/1.html)
+* [1. Two Sum](1.html)
 * [2. Add Two Number](https://zergzerg.cn/notes/webnotes/leetcode/2.html)
 * [4. Median of Two Sorted Array](https://zergzerg.cn/notes/webnotes/leetcode/4.html)
 * [6. ZigZag Conversion](https://zergzerg.cn/notes/webnotes/leetcode/6.html)

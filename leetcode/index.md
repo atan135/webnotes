@@ -1,4 +1,4 @@
-# LeetCode已刷题目整理
+# LeetCode已完成题目整理
 
 * [1. Two Sum](https://zergzerg.cn/notes/webnotes/leetcode/1.html)
 * [2. Add Two Number](https://zergzerg.cn/notes/webnotes/leetcode/2.html)
@@ -10,6 +10,7 @@
 * [11. Container With Most Water](https://zergzerg.cn/notes/webnotes/leetcode/11.html)
 * [12. Integer to Roman](https://zergzerg.cn/notes/webnotes/leetcode/12.html)
 * [13. Roman to Integer](https://zergzerg.cn/notes/webnotes/leetcode/13.html)
+* [14. Longest Common Prefix](https://zergzerg.cn/notes/webnotes/leetcode/14.html)
 * [367. Valid Perfect Square](https://zergzerg.cn/notes/webnotes/leetcode/367.html)
 * [389. Find the Difference](https://zergzerg.cn/notes/webnotes/leetcode/389.html)
 * [394. Decode String](https://zergzerg.cn/notes/webnotes/leetcode/394.html)

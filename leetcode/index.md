@@ -16,6 +16,7 @@
 * [18. 4 Sum](18.html)
 * [19. Remove Nth Node From End of List](19.html)
 * [20. Valid Parantheses](20.html)
+* [21. Merge Two Sorted Lists](21.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

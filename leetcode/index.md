@@ -21,6 +21,8 @@
 * [23. Merge k Sorted Lists](23.html)
 * [24. Swap Nodes in Pairs](24.html)
 * [25. Reverse Nodes in k-Group](25.html)
+* [26. Remove Duplicates from Sorted Array](26.html)
+* [27. Remove Elements](27.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

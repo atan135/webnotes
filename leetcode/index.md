@@ -19,6 +19,8 @@
 * [21. Merge Two Sorted Lists](21.html)
 * [22. Generate Parenthese](22.html)
 * [23. Merge k Sorted Lists](23.html)
+* [24. Swap Nodes in Pairs](24.html)
+* [25. Reverse Nodes in k-Group](25.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

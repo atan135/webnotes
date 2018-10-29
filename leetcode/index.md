@@ -23,6 +23,8 @@
 * [25. Reverse Nodes in k-Group](25.html)
 * [26. Remove Duplicates from Sorted Array](26.html)
 * [27. Remove Elements](27.html)
+* [28. Implement strStr()](28.html)
+* [29. Devide Two Integers](29.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

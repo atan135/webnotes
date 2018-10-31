@@ -30,6 +30,8 @@
 * [30. Substring with Concatenation of Words](30.html)
 * [31. Next Permutation](31.html)
 * [32. Longest Valid Parenthese](32.html)
+* [33. Search in Rotated Sorted Array](33.html)
+* [34. Find First and Last Element in Sorted Array](34.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

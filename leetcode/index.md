@@ -35,6 +35,7 @@
 * [35. Search Insert Position](35.html)
 * [36. Valid Sudoku](36.html)
 * [37. Sudoku Solver](37.html)
+* [38. Count and Say](38.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

@@ -33,6 +33,8 @@
 * [33. Search in Rotated Sorted Array](33.html)
 * [34. Find First and Last Element in Sorted Array](34.html)
 * [35. Search Insert Position](35.html)
+* [36. Valid Sudoku](36.html)
+* [37. Sudoku Solver](37.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

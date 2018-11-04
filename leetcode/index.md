@@ -47,4 +47,7 @@
 * [908. Smallest Range I](908.html)
 * [914. X of a Kind in a Deck of Cards](914.html)
 * [915. Partition Array into Disjoint Intervals](915.html)
+* [933. Number of Recent Calls](933.html)
+* [934. Shortest Bridge](934.html)
+* [935. Knight Dial](935.html)
 

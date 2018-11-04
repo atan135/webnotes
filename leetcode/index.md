@@ -1,5 +1,7 @@
 # LeetCode已完成题目整理
 
+>  说明：以下解题，如果没有说明，我的解法的运行效率基本在LeetCode的排名在靠前位置，如果LeetCode有更好的解法，我会在解法中有说明，或者附上排名靠前的解法。LeetCode里面使用sync_with_stdio开启输出流加速的方式提高自己解法的旁门，不太推荐，有违刷题本意。
+
 * [1. Two Sum](1.html)
 * [2. Add Two Number](2.html)
 * [4. Median of Two Sorted Array](4.html)
@@ -25,6 +27,18 @@
 * [27. Remove Elements](27.html)
 * [28. Implement strStr()](28.html)
 * [29. Devide Two Integers](29.html)
+* [30. Substring with Concatenation of Words](30.html)
+* [31. Next Permutation](31.html)
+* [32. Longest Valid Parenthese](32.html)
+* [33. Search in Rotated Sorted Array](33.html)
+* [34. Find First and Last Element in Sorted Array](34.html)
+* [35. Search Insert Position](35.html)
+* [36. Valid Sudoku](36.html)
+* [37. Sudoku Solver](37.html)
+* [38. Count and Say](38.html)
+* [39. Combination Sum](39.html)
+* [40. Combination Sum II](40.html)
+* [41. First Missing Positive](41.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

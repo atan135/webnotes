@@ -39,6 +39,7 @@
 * [39. Combination Sum](39.html)
 * [40. Combination Sum II](40.html)
 * [41. First Missing Positive](41.html)
+* [42. Trapping Rain Water](42.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

@@ -45,6 +45,8 @@
 * [46. Permutations](46.html)
 * [47. Permutations II](47.html)
 * [48. Rotate Image](48.html)
+* [49. Group Anagrams](49.html)
+* [50. Pow(x,n)](50.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

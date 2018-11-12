@@ -2,22 +2,16 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>index</title><link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}#write, body { height: auto; }
-#write, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write ol, #write p, #write ul { position: relative; }
-#write, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write, pre { white-space: pre-wrap; }
-.CodeMirror, .md-fences, table { text-align: left; }
-.md-reset, a:active, a:hover { outline: 0px; }
-.md-reset, .md-toc-item a { text-decoration: none; }
-.MathJax_SVG, .md-reset { float: none; direction: ltr; }
-:root { --bg-color:#ffffff; --text-color:#333333; }
+<title>index</title><link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
 a.url { word-break: break-all; }
-.in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
-#write { margin: 0px auto; word-break: normal; word-wrap: break-word; padding-bottom: 70px; overflow-x: visible; }
-.first-line-indent #write p .md-line { text-indent: 0px; }
-.first-line-indent #write li, .first-line-indent #write p, .first-line-indent #write p .md-line:first-child { text-indent: 2em; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; padding-bottom: 70px; overflow-x: visible; }
+.first-line-indent #write div, .first-line-indent #write li, .first-line-indent #write p { text-indent: 2em; }
+.first-line-indent #write div :not(p):not(div), .first-line-indent #write div.md-htmlblock-container, .first-line-indent #write p *, .first-line-indent pre { text-indent: 0px; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
@@ -25,84 +19,93 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
   .CodeMirror-gutters { display: none !important; }
 }
-#write > blockquote:first-child, #write > div:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > table:first-child, #write > ul:first-child { margin-top: 30px; }
-#write li > table:first-child { margin-top: -20px; }
+#write > blockquote:first-child, #write > div:first-child, #write > figure:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > ul:first-child { margin-top: 30px; }
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; }
 button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.6rem; }
 h4 { font-size: 1.4rem; }
 h5 { font-size: 1.2rem; }
 h6 { font-size: 1rem; }
-p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
-.mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0px; -webkit-margin-after: 0px; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-#write > figure:first-child { margin-top: 16px; }
-figure { overflow-x: auto; margin: -8px 0px 0px -8px; max-width: calc(100% + 16px); padding: 8px; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; }
-.CodeMirror-line, .md-fences { break-inside: avoid; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 80px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; margin-right: 4px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
 .CodeMirror-lines { padding: 0px; }
 div.hr:focus { cursor: none; }
-.md-fences { font-size: 0.9rem; display: block; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
 .md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-.md-fences .CodeMirror.CodeMirror-wrap { top: -1.6em; margin-bottom: -1.6em; }
-.md-fences.mock-cm { white-space: pre-wrap; }
-.show-fences-line-number .md-fences { padding-left: 0px; }
-.show-fences-line-number .md-fences.mock-cm { padding-left: 40px; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; vertical-align: top; background: 0px 0px; text-shadow: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; }
-.md-toc-inner, a img, img a { cursor: pointer; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child { margin-top: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
   #write { margin-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  h1, h2, h3, h4, h5, h6 { break-after: avoid-page; orphans: 2; }
-  p { orphans: 4; }
   html.blink-to-pdf { font-size: 13px; }
   .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   @page { margin: 20mm 0px; }
 }
-.footnote-line { white-space: pre-wrap; margin-top: 0.714em; font-size: 0.7em; }
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
 pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > img:only-child { display: block; margin: auto; }
-.md-line > .md-image:only-child, p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
-.mathjax-block:not(:empty)::after, .md-toc-content::after, .md-toc::after { display: none; }
+p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
-.mathjax-block { white-space: pre; overflow: hidden; width: 100%; }
-p + .mathjax-block { margin-top: -1.143rem; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
-.MathJax_SVG, .mathjax-block .MathJax_SVG_Display { text-indent: 0px; max-width: none; max-height: none; min-height: 0px; }
 .md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
 .md-toc-inner:hover { }
-.md-toc-inner { display: inline-block; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
 .md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
 .md-toc-h2 .md-toc-inner { margin-left: 2em; }
 .md-toc-h3 .md-toc-inner { margin-left: 4em; }
@@ -119,21 +122,27 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .footnote-line a:not(.reversefootnote) { color: inherit; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
-code, pre, tt { font-family: var(--monospace); }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .md-inline-math .MathJax_SVG .noError { display: none !important; }
-.mathjax-block .MathJax_SVG_Display { text-align: center; margin: 1em 0px; position: relative; min-width: 100%; width: auto; display: block !important; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
 .MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
-.MathJax_SVG .MJX-monospace { font-family: monospace; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; min-width: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
 .MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg, [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
 [lang="mermaid"] .node text { font-size: 1rem; }
 table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
 
 
 :root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
@@ -164,7 +173,7 @@ h5 { font-size: 1em; }
 h6 { font-size: 1em; color: rgb(119, 119, 119); }
 p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
 li > ol, li > ul { margin: 0px; }
-hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border-width: 0px 0px 1px; border-style: none none solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; overflow: hidden; box-sizing: content-box; border-bottom-color: rgb(221, 221, 221); }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
 body > h2:first-child { margin-top: 0px; padding-top: 0px; }
 body > h1:first-child { margin-top: 0px; padding-top: 0px; }
 body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
@@ -175,17 +184,19 @@ li p.first { display: inline-block; }
 ul, ol { padding-left: 30px; }
 ul:first-child, ol:first-child { margin-top: 0px; }
 ul:last-child, ol:last-child { margin-bottom: 0px; }
-blockquote { border-left: 4px solid rgb(221, 221, 221); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
 blockquote blockquote { padding-right: 0px; }
 table { padding: 0px; word-break: initial; }
-table tr { border-top: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px; }
-table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
-table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
-table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
 table tr th:first-child, table tr td:first-child { margin-top: 0px; }
 table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
-.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); }
-.md-fences, code, tt { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 4px 2px; }
 .md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
 .md-task-list-item > input { margin-left: -1.3em; }
 @media screen and (min-width: 914px) {
@@ -198,17 +209,17 @@ table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
 .md-fences { background-color: rgb(248, 248, 248); }
 #write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
 .mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
 #write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
 #write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
 #write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
 #write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
-.md-image > .md-meta { border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
-.md-tag { color: inherit; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
 .md-toc { margin-top: 20px; padding-bottom: 20px; }
 .sidebar-tabs { border-bottom: none; }
 #typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
 #typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
-#md-notification::before { top: 10px; }
 .on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
 header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
 .file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
@@ -224,6 +235,6 @@ header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Aria
 </style>
 </head>
 <body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node show-fences-line-number'><h1><a name='header-n0' class='md-header-anchor '></a>LeetCode已完成题目整理</h1><blockquote><p>说明：以下解题，如果没有说明，我的解法的运行效率基本在LeetCode的排名在靠前位置，如果LeetCode有更好的解法，我会在解法中有说明，或者附上排名靠前的解法。LeetCode里面使用sync_with_stdio开启输出流加速的方式提高自己解法的旁门，不太推荐，有违刷题本意。</p></blockquote><ul><li><a href='1.html'>1. Two Sum</a></li><li><a href='2.html'>2. Add Two Number</a></li><li><a href='4.html'>4. Median of Two Sorted Array</a></li><li><a href='6.html'>6. ZigZag Conversion</a></li><li><a href='7.html'>7. Reverse Integer</a></li><li><a href='8.html'>8. String to Integer(Atoi)</a></li><li><a href='8.html'>9. Palindrome Number</a></li><li><a href='11.html'>11. Container With Most Water</a></li><li><a href='12.html'>12. Integer to Roman</a></li><li><a href='13.html'>13. Roman to Integer</a></li><li><a href='14.html'>14. Longest Common Prefix</a></li><li><a href='15.html'>15. 3Sum</a></li><li><a href='17.html'>17. Letter Combinations of Phone Number</a></li><li><a href='18.html'>18. 4 Sum</a></li><li><a href='19.html'>19. Remove Nth Node From End of List</a></li><li><a href='20.html'>20. Valid Parantheses</a></li><li><a href='21.html'>21. Merge Two Sorted Lists</a></li><li><a href='22.html'>22. Generate Parenthese</a></li><li><a href='23.html'>23. Merge k Sorted Lists</a></li><li><a href='24.html'>24. Swap Nodes in Pairs</a></li><li><a href='25.html'>25. Reverse Nodes in k-Group</a></li><li><a href='26.html'>26. Remove Duplicates from Sorted Array</a></li><li><a href='27.html'>27. Remove Elements</a></li><li><a href='28.html'>28. Implement strStr()</a></li><li><a href='29.html'>29. Devide Two Integers</a></li><li><a href='30.html'>30. Substring with Concatenation of Words</a></li><li><a href='31.html'>31. Next Permutation</a></li><li><a href='32.html'>32. Longest Valid Parenthese</a></li><li><a href='33.html'>33. Search in Rotated Sorted Array</a></li><li><a href='34.html'>34. Find First and Last Element in Sorted Array</a></li><li><a href='35.html'>35. Search Insert Position</a></li><li><a href='36.html'>36. Valid Sudoku</a></li><li><a href='37.html'>37. Sudoku Solver</a></li><li><a href='38.html'>38. Count and Say</a></li><li><a href='39.html'>39. Combination Sum</a></li><li><a href='40.html'>40. Combination Sum II</a></li><li><a href='41.html'>41. First Missing Positive</a></li><li><a href='42.html'>42. Trapping Rain Water</a></li><li><a href='43.html'>43. Multiply Strings</a></li><li><a href='45.html'>45. Jump Game II</a></li><li><a href='46.html'>46. Permutations</a></li><li><a href='47.html'>47. Permutations II</a></li><li><a href='48.html'>48. Rotate Image</a></li><li><a href='49.html'>49. Group Anagrams</a></li><li><a href='50.html'>50. Pow(x,n)</a></li><li><a href='51.html'>51. N-Queens</a></li><li><a href='52.html'>52. N-Queens II</a></li><li><a href='53.html'>53. Maxmum SubArray</a></li><li><a href='54.html'>54. Spiral Matrix</a></li><li><a href='55.html'>55. Jump Game</a></li><li><a href='91.html'>91. Decode Ways</a></li><li><a href='367.html'>367. Valid Perfect Square</a></li><li><a href='389.html'>389. Find the Difference</a></li><li><a href='394.html'>394. Decode String</a></li><li><a href='415.html'>415. Add Strings</a></li><li><a href='424.html'>424. Longest Repeating Character Replacement </a></li><li><a href='429.html'>429. N-ary Tree Level Order Traversal</a></li><li><a href='441.html'>441. Arranging Coins</a></li><li><a href='448.html'>448. Find All Numbers Disappeared in an Array</a></li><li><a href='501.html'>501. Find Mode in Binary Tree</a></li><li><a href='506.html'>506. Relative Ranks</a></li><li><a href='507.html'>507. Perfect Number</a></li><li><a href='520.html'>520. Detect Capital</a></li><li><a href='709.html'>709. To Lower Case</a></li><li><a href='762.html'>762. Prime Number of Set Bits in Binary Representation</a></li><li><a href='859.html'>859. Buddy Strings</a></li><li><a href='860.html'>860. Lemonade Change</a></li><li><a href='867.html'>867. Transpose Matrix</a></li><li><a href='872.html'>872. Leaf-Similar Trees</a></li><li><a href='908.html'>908. Smallest Range I</a></li><li><a href='914.html'>914. X of a Kind in a Deck of Cards</a></li><li><a href='915.html'>915. Partition Array into Disjoint Intervals</a></li><li><a href='933.html'>933. Number of Recent Calls</a></li><li><a href='934.html'>934. Shortest Bridge</a></li><li><a href='935.html'>935. Knight Dial</a></li></ul><p>&nbsp;</p></div>
+<div  id='write'  class = 'is-node'><h1><a name='header-n0' class='md-header-anchor '></a>LeetCode已完成题目整理</h1><blockquote><p>说明：以下解题，如果没有说明，我的解法的运行效率基本在LeetCode的排名在靠前位置，如果LeetCode有更好的解法，我会在解法中有说明，或者附上排名靠前的解法。LeetCode里面使用sync_with_stdio开启输出流加速的方式提高自己解法的旁门，不太推荐，有违刷题本意。</p></blockquote><ul><li><a href='1.html'>1. Two Sum</a></li><li><a href='2.html'>2. Add Two Number</a></li><li><a href='4.html'>4. Median of Two Sorted Array</a></li><li><a href='6.html'>6. ZigZag Conversion</a></li><li><a href='7.html'>7. Reverse Integer</a></li><li><a href='8.html'>8. String to Integer(Atoi)</a></li><li><a href='8.html'>9. Palindrome Number</a></li><li><a href='11.html'>11. Container With Most Water</a></li><li><a href='12.html'>12. Integer to Roman</a></li><li><a href='13.html'>13. Roman to Integer</a></li><li><a href='14.html'>14. Longest Common Prefix</a></li><li><a href='15.html'>15. 3Sum</a></li><li><a href='17.html'>17. Letter Combinations of Phone Number</a></li><li><a href='18.html'>18. 4 Sum</a></li><li><a href='19.html'>19. Remove Nth Node From End of List</a></li><li><a href='20.html'>20. Valid Parantheses</a></li><li><a href='21.html'>21. Merge Two Sorted Lists</a></li><li><a href='22.html'>22. Generate Parenthese</a></li><li><a href='23.html'>23. Merge k Sorted Lists</a></li><li><a href='24.html'>24. Swap Nodes in Pairs</a></li><li><a href='25.html'>25. Reverse Nodes in k-Group</a></li><li><a href='26.html'>26. Remove Duplicates from Sorted Array</a></li><li><a href='27.html'>27. Remove Elements</a></li><li><a href='28.html'>28. Implement strStr()</a></li><li><a href='29.html'>29. Devide Two Integers</a></li><li><a href='30.html'>30. Substring with Concatenation of Words</a></li><li><a href='31.html'>31. Next Permutation</a></li><li><a href='32.html'>32. Longest Valid Parenthese</a></li><li><a href='33.html'>33. Search in Rotated Sorted Array</a></li><li><a href='34.html'>34. Find First and Last Element in Sorted Array</a></li><li><a href='35.html'>35. Search Insert Position</a></li><li><a href='36.html'>36. Valid Sudoku</a></li><li><a href='37.html'>37. Sudoku Solver</a></li><li><a href='38.html'>38. Count and Say</a></li><li><a href='39.html'>39. Combination Sum</a></li><li><a href='40.html'>40. Combination Sum II</a></li><li><a href='41.html'>41. First Missing Positive</a></li><li><a href='42.html'>42. Trapping Rain Water</a></li><li><a href='43.html'>43. Multiply Strings</a></li><li><a href='45.html'>45. Jump Game II</a></li><li><a href='46.html'>46. Permutations</a></li><li><a href='47.html'>47. Permutations II</a></li><li><a href='48.html'>48. Rotate Image</a></li><li><a href='49.html'>49. Group Anagrams</a></li><li><a href='50.html'>50. Pow(x,n)</a></li><li><a href='51.html'>51. N-Queens</a></li><li><a href='52.html'>52. N-Queens II</a></li><li><a href='53.html'>53. Maxmum SubArray</a></li><li><a href='54.html'>54. Spiral Matrix</a></li><li><a href='55.html'>55. Jump Game</a></li><li><a href='56.html'>56. Merge Interval</a></li><li><a href='57.html'>57. Insert Interval</a></li><li><a href='91.html'>91. Decode Ways</a></li><li><a href='367.html'>367. Valid Perfect Square</a></li><li><a href='389.html'>389. Find the Difference</a></li><li><a href='394.html'>394. Decode String</a></li><li><a href='415.html'>415. Add Strings</a></li><li><a href='424.html'>424. Longest Repeating Character Replacement </a></li><li><a href='429.html'>429. N-ary Tree Level Order Traversal</a></li><li><a href='441.html'>441. Arranging Coins</a></li><li><a href='448.html'>448. Find All Numbers Disappeared in an Array</a></li><li><a href='501.html'>501. Find Mode in Binary Tree</a></li><li><a href='506.html'>506. Relative Ranks</a></li><li><a href='507.html'>507. Perfect Number</a></li><li><a href='520.html'>520. Detect Capital</a></li><li><a href='709.html'>709. To Lower Case</a></li><li><a href='762.html'>762. Prime Number of Set Bits in Binary Representation</a></li><li><a href='859.html'>859. Buddy Strings</a></li><li><a href='860.html'>860. Lemonade Change</a></li><li><a href='867.html'>867. Transpose Matrix</a></li><li><a href='872.html'>872. Leaf-Similar Trees</a></li><li><a href='908.html'>908. Smallest Range I</a></li><li><a href='914.html'>914. X of a Kind in a Deck of Cards</a></li><li><a href='915.html'>915. Partition Array into Disjoint Intervals</a></li><li><a href='933.html'>933. Number of Recent Calls</a></li><li><a href='934.html'>934. Shortest Bridge</a></li><li><a href='935.html'>935. Knight Dial</a></li></ul><p>&nbsp;</p></div>
 </body>
 </html>

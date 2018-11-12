@@ -52,6 +52,8 @@
 * [53. Maxmum SubArray](53.html)
 * [54. Spiral Matrix](54.html)
 * [55. Jump Game](55.html)
+* [56. Merge Interval](56.html)
+* [57. Insert Interval](57.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

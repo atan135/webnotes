@@ -54,6 +54,8 @@
 * [55. Jump Game](55.html)
 * [56. Merge Interval](56.html)
 * [57. Insert Interval](57.html)
+* [58. Length of Last Word](58.html)
+* [59. Spiral Matrix II](59.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

@@ -59,7 +59,7 @@
 * [60. Permutation Sequence](60.html)
 * [61. Rotate List](61.html)
 * [62. Unique Paths](62.html)
-* [63. Unique Paths](63.html)
+* [63. Unique Paths II](63.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

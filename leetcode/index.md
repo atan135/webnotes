@@ -68,6 +68,8 @@
 * [69. Sqrt(x)](69.html)
 * [70. Climbing Stairs](70.html)
 * [71. Simplify Path](71.html)
+* [73. Set Matrix Zeros](73.html)
+* [74. Search a 2D Matrix](74.html)
 * [91. Decode Ways](91.html)
 * [367. Valid Perfect Square](367.html)
 * [389. Find the Difference](389.html)

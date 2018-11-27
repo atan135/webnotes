@@ -69,6 +69,7 @@
 * [506. Relative Ranks](506.html)
 * [507. Perfect Number](507.html)
 * [520. Detect Capital](520.html)
+* [605. Can Place Flower](605.html)
 * [709. To Lower Case](709.html)
 * [762. Prime Number of Set Bits in Binary Representation](762.html)
 * [859. Buddy Strings](859.html)

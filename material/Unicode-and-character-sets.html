@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Unicode-and-character-sets</title><link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; padding-bottom: 70px; overflow-x: visible; }
+.first-line-indent #write div, .first-line-indent #write li, .first-line-indent #write p { text-indent: 2em; }
+.first-line-indent #write div :not(p):not(div), .first-line-indent #write div.md-htmlblock-container, .first-line-indent #write p *, .first-line-indent pre { text-indent: 0px; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write > blockquote:first-child, #write > div:first-child, #write > figure:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > ul:first-child { margin-top: 30px; }
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 4px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+
+
+
+
+
+ .typora-export p, .typora-export .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h2><a name='header-n0' class='md-header-anchor '></a>每个软件工程师必知的unicode和字符集知识（翻译）</h2><p>原文链接：（<a href='https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/' target='_blank' class='url'>https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/</a>）</p><p>原文作者：Joel Spolsky</p><p>​<span>	</span>上网多了，就必然会遇到一些关于字符编码的问题，如HTML中的Content-Type tag，比如有时候文本打开是乱码（Excel，txt都有出现）等。我们有时候会去尝试使用一些文本编辑器如notepad++之类的去更改切换，直至乱码最终能可见（或者失败）。但是不回去深思究竟编码集是如何控制的。但是其实，这些只是对程序开发是很重要，而且不是那么的难以理解。（还有些清谈，没翻译了）</p><p>​<span>	</span>要适应国际化的多语言环境，必须要适应使用特定的字符集编码，而不仅仅是八个字节的ASCII编码机处理简单的英文字符。文章内容是尽量简单基础，不会涉及到一些高级的编码特性，但是足够一个程序员理解字符编码集。</p><h3><a name='header-n10' class='md-header-anchor '></a>历史背景</h3><p>​<span>	</span>理解一件事物的最简单的方法是从起源发展逐渐说明开来。</p><p>​<span>	</span>在<strong>K&amp;R</strong> 书写 <strong>The C Programming Language</strong> 时候，使用的是ASCII字符集编码字符，这个字符集使用8比特存储字符，32-127为可见字符，0-31为控制字符，不可打印。如果只是一位简单的英语使用者，这个编码字符集基本够用。最高位空余1比特，可以用于自定义字符。例如，在那个年代，IBM使用高位1的128字符来表示带头部的字符（OEM character），如 <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-2-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.29ex" height="1.877ex" viewBox="0 -705.6 555.6 808.1" role="img" focusable="false" style="vertical-align: -0.026ex; margin-bottom: -0.213ex;"><defs><path stroke-width="0" id="E2-MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path stroke-width="0" id="E2-MJMAIN-2D9" d="M190 609Q190 637 208 653T252 669Q275 667 292 652T309 609Q309 579 292 564T250 549Q225 549 208 564T190 609Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E2-MJMATHI-65" x="17" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E2-MJMAIN-2D9" x="55" y="-31"></use></g></svg></span><script type="math/tex" id="MathJax-Element-2">\dot e</script> 等，用于一些特定的字符语言使用者。然而，由于没有一个统一的标准，可能不同的语言会共用同样的字符集编码位置。导致语言传输显示不能跨平台。</p><p><img src='http://cdn.zergzerg.cn/2019-01-23ascii.png' alt='' referrerPolicy='no-referrer' /></p><p><img src='http://cdn.zergzerg.cn/2019-01-23oem.png' alt='' referrerPolicy='no-referrer' /></p><p>​<span>	</span>最终OEM字符生成了一个ANSI标准，在这个标准中，统一规定了高位128字符的表示方法，在一个系统内，定义一个编码页，里面统一标识一个字符的表示结果。使用这种方式，字符语言基本能够完全表示。但是这样又存在一个问题，如果在一个文本中想同时书写希腊语和冰岛语，这时候使用ANSI也是无法表示的，因为编码页只能选择一种。</p><p>​<span>	</span>而在亚洲语系中，语言的表示就更加复杂了，汉语的基础字符就有几千数万个，这么多的基础字符不可能通过一个8比特来表示，就出现了使用DBCS（double byte character set）的处理方式，一些字符使用单字节，一些字符使用双字节，但是在程序开发中就不再适用s++/s--方式去遍历字符了，如在windows开发环境中，只能通过AnsiNext和AnsiPrev方法去遍历字符。</p><p>​<span>	</span>这种情况下，仍然有一些开发人员把一个字节当成一个字符，这样处理方法，好像也不会出问题，只要不去将字符串从一个电脑传输至另一台电脑或者从一个语系迁移到另一语系。但是事实是这种情况随着网络技术的发展越来越常见，字符编码出现问题也就越来越多。这时候，就开发了Unicode编码。</p><h3><a name='header-n26' class='md-header-anchor '></a>Unicode</h3><p>​<span>	</span>Unicode是字符编码中的一个创举，使用单个字符集来标识所有的字符。很多人误解为Unicode是一个16比特的编码，所以最多表示65536个可能的字符，但是，这个想法是错误的。这也是Unicode最奇妙的地方，所以有这个误解，也不奇怪。</p><p>​<span>	</span>实际上，Unicode使用了一种完全不同的方式来考虑字符表示，只有当你把思维带入进去，才能真的理解这种编码方式。在这里，我们假设一个字符和磁盘/内存中的一定量比特存在映射关系，如</p><p class='md-math-block'><div mdtype="math_block" cid="n32" id="mathjax-n32" class="mathjax-block md-end-block md-math-block md-rawblock" spellcheck="false" contenteditable="false"><div class="md-rawblock-container md-math-container" tabindex="-1"><span class="MathJax_Preview"></span><span class="MathJax_SVG_Display" style="text-align: center;"><span class="MathJax_SVG" id="MathJax-Element-25-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14.645ex" height="2.11ex" viewBox="0 -806.1 6305.6 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E28-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path stroke-width="0" id="E28-MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E28-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E28-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMATHI-41" x="0" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-2192" x="1027" y="0"></use><g transform="translate(2305,0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-31" x="500" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30" x="1000" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30" x="1500" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30" x="2000" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30" x="2500" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-30" x="3000" y="0"></use><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#E28-MJMAIN-31" x="3500" y="0"></use></g></g></svg></span></span><script type="math/tex; mode=display" id="MathJax-Element-25">A \rightarrow 01000001</script></div></div></p><p>​<span>	</span>在Unicode中，一个字符映射到一个字符指针（code point）的抽象概念上（字符指针是怎样表示为磁盘内存上的比特不在本文考虑范畴中）。 例如，字符A，不同于字符B，也不同于字符a，但是和字符 <em>A</em> 是相同的，不同字体的A也被认为是同一个字符。这在英语中容易理解，但是在其他语系中，可能有不同，如德语中字符 ß 含义就是ss，而在希伯来语中，一个单词的最后一个字符的形状会发生变化，这算不算是一个新的字符？所有这些疑问都在Unicode中已经有了定论。</p><p>​<span>	</span>所有语系中的所有字符，都在Unicode中有一个唯一的 <strong>magic number</strong>，如 <strong>U+0639</strong> ，这就是一个code point，其中，<strong>U+</strong> 表示这是一个Unicode字符，数值 <strong>0639</strong> 是一个16进制的数字，所有Unicode字符的表示可以在网站 <a href='http://www.unicode.org/'>The Unicode Web site</a> 看到。</p><p>​<span>	</span>Unicode能够定义的字符是无穷多的，而不仅仅是2个字节16比特表示的65536个字符。例如，我们编写一个字符串：</p><p><strong>hello</strong></p><p>这个字符串在Unicode的表示为</p><p><strong>U+0048 U+0065 U+006C U+006C U+006F</strong></p><p>截止目前为止，我们只说明了字符的Unicode表示，但是还没有涉及到这些表示是如何表示在内存或者文本中。这些就属于编码的内容了。</p><h3><a name='header-n58' class='md-header-anchor '></a>Encodings</h3><p>最早的编码方式，使用了两个字节来存储，所以上文的表示，在比特上为</p><p><strong>00 48 00 65 00 6C 00 6C 00 6F</strong></p><p>么？但是也可能是表示为</p><p><strong>48 00 65 00 6C 00 6C 00 6F 00</strong> ?</p><p>​<span>	</span>先看说明：早期的Unicode设计者希望可以设置存储他们的code point为大端存储或者小端存储，用来适配各种CPU架构如何，都能正确读取。因此在Unicode字符串中，前面必须插入一个 <strong>FE FF</strong> 的字符标识，这个标识被称为 <strong>Unicode Byte Order Mark</strong>，也就是Unicode字节序标识。如果你将标识转换为 <strong>FF FE</strong> ，那么读取Unicode的程序就知道后面的字符串也需要这样转换处理。</p><p>​<span>	</span>这样处理好像就没有问题了，但是又有人抱怨，Unicode这样处理，基本英文字符前面的一串比特0，是不是太浪费了。对于英语语系的国家，他们的文本存储相当于增加了一倍存储。而且，流通存储在网络上的那么多的文本资源，使用ANSI或者DBCS编码的，谁去做这个编码转换？因此，在一段时间内，Unicode是无人问津的。</p><p>​<span>	</span>在这个时候，<strong>UTF-8 </strong>出现了，UTF-8使用另一种方式来表示一个Unicode code point，在内存比特中，使用8比特的字节来表示一个Unicode字符，其中，code 0-127存储为单个字节，code point 在128-更多的，存储为2,3，或者最多6字节。</p><p><img src='http://cdn.zergzerg.cn/2019-01-23utf8.png' alt='' referrerPolicy='no-referrer' /></p><p>​<span>	</span>在这种优雅的表示下，所有的英语基本字符，都可以在UTF-8中正常表现，如同ASCII一样，不会有任何改变，这样，所有的美国人或者英语系国家的人们，使用起来就都没有抱怨，甚至察觉不到之间的区别。而对于其他语系的字符，可能就需要更多的字节来存储code point了（UTF-8还有一个好的性质，就是会避开使用字节0进入编码，防止被识别为字符串终止）。</p><p>​<span>	</span>有三种方式来编码Unicode，传统的使用2字节方式的UCS-2，使用16比特的UTF-16，和使用多字节的UTF-8方式，其中UCS-2需要识别出是大端还是小端表示。UTF-8是最通用的表达方式。还有一些其他的编码方式，如UTF-7，使用方式类似UTF-8，但是保证每个字节的首位比特为0；UCS-4，固定使用4字节表示一个Unicode。</p><p>​<span>	</span>Unicode编码的code point可以被多种传统编码集识别，例如Unicode字符串 <strong>Hello</strong> （U+0048 U+0065 U+006C U+006C U+006F)在ASCII，或者旧版的OEM编码，ANSI编码中都能正常显示，只是有一点，有些code point可能在当前编码集中没有对应的显示，此时，可能会显示为？或者�。一些通用的编码集，如Windows-1252，ISO-8859-1,Latin-1等，如果去存储俄文等，会出现一些问号表示无法显示，而UTF-7,8,16,32等，都能够正确存储所有的code point值。</p><p><strong>最重要的一点认识：如果不知道字符串的编码形式，那就无法解析这个字符串的含义</strong></p><p>​<span>	</span>那么，我们怎么识别出一个文本的编码方式呢？这里，有一些标准的做法，如对于email，你接受到的email数据中，有个header文本为：</p><blockquote><p><strong>Content-Type: text/plain;charset=&quot;UTF-8&quot;</strong></p></blockquote><p>​<span>	</span>而对于web page，在HTTP response中header也会携带类似信息。如下图</p><p><img src='http://cdn.zergzerg.cn/2019-01-23response.png' alt='' referrerPolicy='no-referrer' /></p><p>​<span>	</span>这样的处理，存在一个问题，假设你运营着一个庞大的网站，里面有来源不同的页面，提供给不同语言的人阅读，这里网络服务器本身是不知道每个文件的编码格式，所以它不能够正确的添加对应的Content-Type头。这时候，就是使用HTML的meta标签的用法了。例如：</p><p><img src='http://cdn.zergzerg.cn/2019-01-23meta.png' alt='' referrerPolicy='no-referrer' /></p><p>由于这个标签是用于之后文本的解析的，所以一定要放在页面的最前面，这样，浏览器在解析之后的页面时候，才不会解析文本出错。</p><p>​<span>	</span>如果浏览器在HTTP头和HTML页面都没有发现响应的charset设置，会如何处理呢？在这里，不同浏览器的处理方式不同，IE会基于整个文件的字节表示，推测是使用的哪种编码方式，哪种语系。这个推断是基于每个语系都有一些最常用的字符，通过推测整个文本的字符字节表示，可以大概推算出是使用了哪种编码、哪种语言。这样也会存在一种情况，一个网站使用了通用的英语，而且没有设置字符集，浏览器也是默认推断出正确的字符集和语言，浏览者也正常阅读。某一天，网站重写了部分内容，添加了部分其他语系的文字，然而用户端的推测可能就会出错。</p><p>​<span>	</span>Joel也提到了在他开发CItyDesk软件中，所有的内置文本都使用了UCS-2(2字节）的Unicode表示方式，这个也是VB，COM和windows xp内置的字符串编码类型，在所有的C++代码中，使用wchar_t定义字符串，使用wcs方法而不是str方法操作字符串，创建UCS-2字符串，使用<strong>L&quot;Hello&quot;</strong> 在前置L即可。使用这个软件发布web页面时，所有的字符转换为浏览器支持的UTF-8编码，这样保证了字符编码不会出错，能被各种内置字符集的用户浏览器正常阅读。</p><p>&nbsp;</p><p><strong>总结：</strong></p><p>Unicode是一种 <strong>编码规范</strong>，它是将各种语系的各种基本字符统一编入一个字符集中，使用一个唯一的Unicode code point值标识，这个值也可以表示为文本形式的U+0039这样的形式，而其存入比特中的形式是多样的，这些<strong>编码集</strong>可以是变长字节的UTF-8，也可以是固定长度的UCS-2或者UTF-16等形式，而一个 <strong>Unicode编码字符集</strong> 是一个能够支持显示的Unicode code point值的一个子集，保证了在这个子集中的字符的正常显示。</p></div>
+</body>
+</html>

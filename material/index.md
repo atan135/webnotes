@@ -5,3 +5,5 @@
 3. [markdown使用介绍](https://zergzerg.cn/notes/webnotes/material/markdown_intro.html)
 4. [markdown-sequence使用介绍](https://zergzerg.cn/notes/webnotes/material/markdown_sequence.html)
 5. [开源协议介绍](https://zergzerg.cn/notes/webnotes/material/open_protocol.html)
+6. [Unicode编码和UTF-8编码集介绍](Unicode-and-character-sets.html)
+
